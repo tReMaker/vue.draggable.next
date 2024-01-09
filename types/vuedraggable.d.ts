@@ -42,7 +42,9 @@ declare const draggableComponent: import("vue").DefineComponent<{
     emitChanges(evt: any): void;
     alterList(onList: any): void;
     spliceList(): void;
+    removeAllFromList(indicies: any): void;
     updatePosition(oldIndex: any, newIndex: any): void;
+    updatePositions(oldIndicies: any, newIndex: any): void;
     getRelatedContextFromMoveEvent({ to, related }: {
         to: any;
         related: any;
@@ -56,13 +58,13 @@ declare const draggableComponent: import("vue").DefineComponent<{
     onDragMove(evt: any, originalEvent: any): any;
     onDragEnd(): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
-    move: Function;
-    clone: Function;
-    componentData: Record<string, any>;
     tag: string;
-    list: unknown[];
-    modelValue: unknown[];
 } & {
+    move?: Function;
+    clone?: Function;
+    componentData?: Record<string, any>;
+    list?: unknown[];
+    modelValue?: unknown[];
     itemKey?: string | Function;
 }>, {
     move: Function;
